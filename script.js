@@ -66,8 +66,12 @@ function mouve(name) {
 }
 
 function addToCard(name) {
-  arr2.push(name);
-  console.log(arr2);
+  if (arr2.includes(name)) {
+    alert("vous possédé déja ce produit dans votre panier ");
+  } else {
+    arr2.push(name);
+    console.log(arr2);
+  }
 
   if (arr2.length > 1) {
     panier.textContent = `il y a ${arr2.length} produits dans le panier`;
@@ -77,6 +81,6 @@ function addToCard(name) {
 }
 
 logo.addEventListener("click", () => {
-  panier.textContent = "";
+  panier.textContent = "il y à 0 produits dans le panier";
   arr2 = [];
 });
